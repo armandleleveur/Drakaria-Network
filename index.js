@@ -39,6 +39,43 @@ client.on(`message`, message => {
         message.reply("Salut!!!!");
         console.log('le bot dit bonjour');
     }
+    if(message.content.startsWith(prefix + "joueur")) {
+        if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permission !");
+
+        if(message.mentions.users.size === 0) {
+            return message.channel.send("Vous devez mentionner un membre")
+        }
+
+        var joueur = message.guild.member(message.mentions.users.first());
+        if(!joueur) {
+            return message.channel.send("Le membre est inconnu :/")
+        }
+
+        if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) {
+            return message.channel.send("Je n'ai pas la permissions pour spam");
+        }
+
+        joueur.joueur().then(member => {
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+        });
+    }
 
     if(message.content === prefix + "help") {
         var aide_embed = new Discord.RichEmbed()
