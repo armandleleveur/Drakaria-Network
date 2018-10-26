@@ -55,7 +55,6 @@ client.on(`message`, message => {
             return message.channel.send("Je n'ai pas la permissions pour spam");
         }
 
-        joueur.send().then(member => {
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
@@ -74,7 +73,6 @@ client.on(`message`, message => {
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
-        });
     }
 
     if(message.content === prefix + "help") {
