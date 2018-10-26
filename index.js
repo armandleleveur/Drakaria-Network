@@ -39,7 +39,7 @@ client.on(`message`, message => {
         message.reply("Salut!!!!");
         console.log('le bot dit bonjour');
     }
-    if(message.content.startsWith(prefix + "joueur")) {
+    if(message.content === prefix + "joueur") {
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permission !");
 
         if(message.mentions.users.size === 0) {
@@ -54,7 +54,7 @@ client.on(`message`, message => {
         if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) {
             return message.channel.send("Je n'ai pas la permissions pour spam");
         }
-
+        joueur.then(member => {
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
@@ -73,6 +73,7 @@ client.on(`message`, message => {
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
             message.channel.send(`${member.user.username} est spam par ${message.author.username}`);
+            )};
     }
 
     if(message.content === prefix + "help") {
