@@ -39,7 +39,7 @@ client.on(`message`, message => {
         message.reply("Salut!!!!");
         console.log('le bot dit bonjour');
     }
-    if(message.content === prefix + "joueur") {
+    if(message.content.startsWith(prefix + "joueur")) {
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permission !");
 
         if(message.mentions.users.size === 0) {
